@@ -15,7 +15,8 @@ S = "${WORKDIR}/git"
 KERNEL_DEFCONFIG = "bcmrpi_defconfig"
 
 # CMDLINE for raspberrypi
-CMDLINE_raspberrypi = "dwc_otg.lpm_enable=0 console=ttyAMA0,115200 kgdboc=ttyAMA0,115200 root=/dev/mmcblk0p2 rootfstype=ext4 rootwait"
+# CMDLINE_raspberrypi = "dwc_otg.lpm_enable=0 console=ttyAMA0,115200 kgdboc=ttyAMA0,115200 root=/dev/mmcblk0p2 rootfstype=ext4 rootwait"
+CMDLINE_raspberrypi = "dwc_otg.lpm_enable=0 console=ttyAMA0,115200 kgdboc=ttyAMA0,115200 root=/dev/nfs nfsroot=192.168.1.52:/mnt/rpi-root ip=192.168.1.50 rootfstype=nfs rootwait debug"
 
 UDEV_GE_141 ?= "1"
 
